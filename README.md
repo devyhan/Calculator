@@ -60,3 +60,48 @@
 레이블과 버튼에 액션과 아웃렛 설정
 ![image](https://user-images.githubusercontent.com/45344633/82724614-4a50c180-9d12-11ea-8bf0-bbe000e61f07.png)
 
+### 1.3.4.입력된 버튼 종류에 따른 명령 분기
+입력을 받는 버튼의 숫자, 연산자, =, AC 를 구분 
+*Command.swift*
+```swift
+enum Command {
+    case addDigit(String)
+    case operation(String)
+    case equal
+    case clear
+}
+```
+*ViewController.swift - func didTapButton*
+```swift
+@IBAction private func didTapButton(_ sender: UIButton) {
+        guard let input = sender.currentTitle  else { return }
+        
+        let commend: Command
+        switch input {
+        case "AC":
+            commend = .clear
+        case "=":
+            commend = .equal
+        case "+", "-", "×", "÷":
+            commend = .operation(input)
+        default:
+            commend = .addDigit(input)
+        }
+        print(commend)
+    }
+```
+
+### 1.3.5.입력된 버튼의 타이틀 출력
+*ViewController.swift*
+```swift
+private var displayValue: String {
+    get { return displayLabel.text ?? "" }
+    set { displayLabel.text = newValue }
+}
+```
+*ViewController.swift - func didTapButton*
+```swift
+displayValue = input
+print("display : \(displayValue), command : \(commend)")
+```
+displayValue를 통해 새로들어온 값을 newValue로 받아 displayLabel에 출력

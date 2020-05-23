@@ -12,6 +12,11 @@ final class ViewController: UIViewController {
     
     @IBOutlet private weak var displayLabel: UILabel!
     
+    private var displayValue: String {
+        get { return displayLabel.text ?? "" }
+        set { displayLabel.text = newValue }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,6 +35,9 @@ final class ViewController: UIViewController {
         default:
             commend = .addDigit(input)
         }
-        print(commend)
+        
+        displayValue = input
+        print("display : \(displayValue), command : \(commend)")
+        
     }
 }
