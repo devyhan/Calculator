@@ -17,9 +17,19 @@ final class ViewController: UIViewController {
     }
     
     @IBAction private func didTapButton(_ sender: UIButton) {
-        guard let input = sender.currentTitle  else {
-            return
+        guard let input = sender.currentTitle  else { return }
+        
+        let commend: Command
+        switch input {
+        case "AC":
+            commend = .clear
+        case "=":
+            commend = .equal
+        case "+", "-", "×", "÷":
+            commend = .operation(input)
+        default:
+            commend = .addDigit(input)
         }
-        print(input)
+        print(commend)
     }
 }

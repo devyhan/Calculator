@@ -13,6 +13,7 @@
 		7EC1EABD2478F07C00420E51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EC1EABC2478F07C00420E51 /* Assets.xcassets */; };
 		7EC1EAC02478F07C00420E51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC1EABE2478F07C00420E51 /* LaunchScreen.storyboard */; };
 		7EC1EACB2478F07C00420E51 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1EACA2478F07C00420E51 /* CalculatorTests.swift */; };
+		7EC1EAD624790A7E00420E51 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1EAD524790A7E00420E51 /* Command.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		7EC1EAC62478F07C00420E51 /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC1EACA2478F07C00420E51 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
 		7EC1EACC2478F07C00420E51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EC1EAD524790A7E00420E51 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				7EC1EAB32478F07B00420E51 /* AppDelegate.swift */,
 				7EC1EAB72478F07B00420E51 /* ViewController.swift */,
+				7EC1EAD524790A7E00420E51 /* Command.swift */,
 				7EC1EAB92478F07B00420E51 /* Main.storyboard */,
 				7EC1EABC2478F07C00420E51 /* Assets.xcassets */,
 				7EC1EABE2478F07C00420E51 /* LaunchScreen.storyboard */,
@@ -199,6 +202,7 @@
 			files = (
 				7EC1EAB82478F07B00420E51 /* ViewController.swift in Sources */,
 				7EC1EAB42478F07B00420E51 /* AppDelegate.swift in Sources */,
+				7EC1EAD624790A7E00420E51 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,6 +32,7 @@
 
 ### 1.3.1.init project
 프로젝트 생성 및 git init
+
 ![image](https://user-images.githubusercontent.com/45344633/82724266-c85f9900-9d0f-11ea-8d23-e40c0d138c62.png)
 
 ### 1.3.2.초기 프로젝트 구조 및 스토리보드 UI 추가
@@ -58,3 +59,4 @@
 ### 1.3.3.IBOutlet 및 IBAction설정
 레이블과 버튼에 액션과 아웃렛 설정
 ![image](https://user-images.githubusercontent.com/45344633/82724614-4a50c180-9d12-11ea-8bf0-bbe000e61f07.png)
+
