@@ -27,96 +27,144 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="0"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="YCA-Th-5QV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RG-gA-zox" userLabel="Number1">
                                         <rect key="frame" x="0.0" y="0.0" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="1"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="hws-A0-pJg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAX-r8-vRG" userLabel="Number2">
                                         <rect key="frame" x="100.5" y="0.0" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="2"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="RmT-bq-wvV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lA3-cE-ODk" userLabel="Number3">
                                         <rect key="frame" x="201" y="0.0" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="3"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="oe0-Mr-x3c"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8J-sz-2T9" userLabel="Number4">
                                         <rect key="frame" x="0.0" y="100.5" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="4"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="Kek-3C-3vK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvq-Rj-Qo0" userLabel="Number5">
                                         <rect key="frame" x="100.5" y="100.5" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="5"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="6Uq-If-UFc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ3-Pp-L66" userLabel="Number6">
                                         <rect key="frame" x="201" y="100.5" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="6"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="9pa-1d-Z9n"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEa-Ip-mQD" userLabel="Number7">
                                         <rect key="frame" x="0.0" y="201" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="7"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="rBN-tz-1IM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmS-f5-qWv" userLabel="Number8">
                                         <rect key="frame" x="100.5" y="201" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="8"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="7Sp-Qh-kab"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asx-cF-8Cx" userLabel="Number9">
                                         <rect key="frame" x="201" y="201" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="9"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="UIW-T0-zf3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdP-Fm-uOu">
                                         <rect key="frame" x="100.5" y="301.5" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
                                         <state key="normal" title="AC"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="XHO-lj-MF4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W83-6l-3mG">
                                         <rect key="frame" x="201" y="301.5" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="1" green="0.66497311792551106" blue="0.035606375400713541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="="/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="gue-ok-mj9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOo-nv-Lxc">
                                         <rect key="frame" x="301.5" y="201" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="1" green="0.66497311792551106" blue="0.035606375400713541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="×"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="2fy-cY-QJq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9X-nL-V9A">
                                         <rect key="frame" x="301.5" y="100.5" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="1" green="0.66497311792551106" blue="0.035606375400713541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="-"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="WSF-uX-3C5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqf-hD-aZ0">
                                         <rect key="frame" x="301.5" y="0.0" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="1" green="0.66497311792551106" blue="0.035606375400713541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="+"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="pOP-Zt-SWx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcZ-RC-cCR">
                                         <rect key="frame" x="301.5" y="301.5" width="92.5" height="92.5"/>
                                         <color key="backgroundColor" red="1" green="0.66497311792551106" blue="0.035606375400713541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <state key="normal" title="÷"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="pbn-JH-sGP" eventType="touchUpInside" id="fAp-gc-jXr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,6 +274,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="1Yl-R6-zrV" id="6xR-om-gwb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUJ-xH-FGF" sceneMemberID="firstResponder"/>
             </objects>

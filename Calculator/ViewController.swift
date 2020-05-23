@@ -9,10 +9,17 @@
 import UIKit
 
 final class ViewController: UIViewController {
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-
+    
+    @IBOutlet private weak var displayLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction private func didTapButton(_ sender: UIButton) {
+        guard let input = sender.currentTitle  else {
+            return
+        }
+        print(input)
+    }
 }
-
