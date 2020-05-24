@@ -28,14 +28,23 @@
 |1 * 2 + 3 / 2 - 1 = |1.5 -  연산자 우선순위와 관계없이 항상 앞에 있던 연산자부터 계산|
 *숫자를 큰 수나 작은 수 음수로 바꿔가며 결과가 제대로 나오는지 테스트해보기*
 
-## 1.3.commit log
+## 1.3.Commit
 
-### 1.3.1.init project
+### 1.3.1.Commit message convension
+```
+Docs: 문서 수정
+Feat: 새로운 기능 추가
+Test: 테스트 코드, 리펙토링 테스트 코드 추가
+Fix: 버그 수정
+```
+*[관련 문서](http://localhost:4000/2020/05/14/git/git-CommitMessage)*
+
+### 1.3.2.Init project
 프로젝트 생성 및 git init
 
 ![image](https://user-images.githubusercontent.com/45344633/82724266-c85f9900-9d0f-11ea-8d23-e40c0d138c62.png)
 
-### 1.3.2.초기 프로젝트 구조 및 스토리보드 UI 추가
+### 1.3.3.초기 프로젝트 구조 및 스토리보드 UI 추가
 
 ![image](https://user-images.githubusercontent.com/45344633/82724099-9dc11080-9d0e-11ea-8c5c-b102084d973b.png)
 
@@ -56,11 +65,11 @@
 - Info.plist - Application Scene Manifest 제거
 ![image](https://user-images.githubusercontent.com/45344633/82723717-d4e1f280-9d0b-11ea-9b05-4b006297a830.png)
 
-### 1.3.3.IBOutlet 및 IBAction설정
+### 1.3.4.IBOutlet 및 IBAction설정
 레이블과 버튼에 액션과 아웃렛 설정
 ![image](https://user-images.githubusercontent.com/45344633/82724614-4a50c180-9d12-11ea-8bf0-bbe000e61f07.png)
 
-### 1.3.4.입력된 버튼 종류에 따른 명령 분기
+### 1.3.5.입력된 버튼 종류에 따른 명령 분기
 입력을 받는 버튼의 숫자, 연산자, =, AC 를 구분 
 *Command.swift*
 ```swift
@@ -91,7 +100,8 @@ enum Command {
     }
 ```
 
-### 1.3.5.입력된 버튼의 타이틀 출력
+### 1.3.6.입력된 버튼의 타이틀 출력
+
 *ViewController.swift*
 ```swift
 private var displayValue: String {
@@ -99,9 +109,37 @@ private var displayValue: String {
     set { displayLabel.text = newValue }
 }
 ```
+
 *ViewController.swift - func didTapButton*
 ```swift
 displayValue = input
 print("display : \(displayValue), command : \(commend)")
 ```
-displayValue를 통해 새로들어온 값을 newValue로 받아 displayLabel에 출력
+
+`displayValue`를 통해 새로들어온 값을 `newValue`로 받아 `displayLabel`에 출력
+
+### 1.3.7.입력된 커멘드를 활용하는 함수 생성
+
+*ViewController.swift*
+```swift
+displayValue = performCommand(commend, with: displayValue)
+```
+
+*ViewController.swift - func performCommand*
+```swift
+private func performCommand(_ command: Command, with displayText: String) -> String {
+    switch command {
+    case .addDigit(let input):
+        return displayText + input
+    case .operation(_):
+        break
+    case .equal:
+        break
+    case .clear:
+        break
+    }
+    return "0"
+}
+```
+
+입력된 커멘드에따라 `displayText`에 추가 혹은 0으로 초기화 함수생성

@@ -36,8 +36,21 @@ final class ViewController: UIViewController {
             commend = .addDigit(input)
         }
         
-        displayValue = input
+        displayValue = performCommand(commend, with: displayValue)
         print("display : \(displayValue), command : \(commend)")
-        
+    }
+    
+    private func performCommand(_ command: Command, with displayText: String) -> String {
+        switch command {
+        case .addDigit(let input):
+            return displayText + input
+        case .operation(_):
+            break
+        case .equal:
+            break
+        case .clear:
+            break
+        }
+        return "0"
     }
 }
