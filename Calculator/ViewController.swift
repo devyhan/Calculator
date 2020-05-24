@@ -17,6 +17,8 @@ final class ViewController: UIViewController {
         set { displayLabel.text = newValue }
     }
     
+    private var shouldResetText = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -40,10 +42,18 @@ final class ViewController: UIViewController {
         print("display : \(displayValue), command : \(commend)")
     }
     
+    private func addDight(value newValue: String, to oldValue: String) -> String {
+        let displayStirng = shouldResetText ? newValue
+            : oldValue.count > 13 ? oldValue
+            : oldValue + newValue
+        shouldResetText = false 
+        return displayStirng
+    }
+    
     private func performCommand(_ command: Command, with displayText: String) -> String {
         switch command {
         case .addDigit(let input):
-            return displayText + input
+            return addDight(value: input, to: displayText)
         case .operation(_):
             break
         case .equal:
@@ -51,6 +61,7 @@ final class ViewController: UIViewController {
         case .clear:
             break
         }
+        shouldResetText = true
         return "0"
     }
 }

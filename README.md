@@ -143,3 +143,40 @@ private func performCommand(_ command: Command, with displayText: String) -> Str
 ```
 
 입력된 커멘드에따라 `displayText`에 추가 혹은 0으로 초기화 함수생성
+
+### 1.3.8.입력된 택스트 길이 제한
+*ViewController.swift*
+```swift
+private var shouldResetText = true
+```
+
+*ViewController.swift*
+```swift
+private func addDight(value newValue: String, to oldValue: String) -> String {
+    let displayStirng = shouldResetText ? newValue
+        : oldValue.count > 13 ? oldValue
+        : oldValue + newValue
+    shouldResetText = false
+    return displayStirng
+}
+```
+
+*ViewController.swift - func performCommand*
+```swift
+private func performCommand(_ command: Command, with displayText: String) -> String {
+    switch command {
+    case .addDigit(let input):
+        return addDight(value: input, to: displayText)
+    case .operation(_):
+        break
+    case .equal:
+        break
+    case .clear:
+        break
+    }
+    shouldResetText = true
+    return "0"
+}
+```
+
+문자열의 길이를 제한하기 위하여 `addDigit`의 기능을 확장하여 함수를 생성한 후 함수 내부에서 shouldResetText의 기본값을 ture 로 설정 후 13자리를 판별한후 `displayString`를 반환한다
