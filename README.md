@@ -144,7 +144,7 @@ private func performCommand(_ command: Command, with displayText: String) -> Str
 
 입력된 커멘드에따라 `displayText`에 추가 혹은 0으로 초기화 함수생성
 
-### 1.3.8.입력된 택스트 길이 제한
+### 1.3.8.입력된 텍스트 길이 제한
 *ViewController.swift*
 ```swift
 private var shouldResetText = true
@@ -180,3 +180,47 @@ private func performCommand(_ command: Command, with displayText: String) -> Str
 ```
 
 문자열의 길이를 제한하기 위하여 `addDigit`의 기능을 확장하여 함수를 생성한 후 함수 내부에서 shouldResetText의 기본값을 ture 로 설정 후 13자리를 판별한후 `displayString`를 반환한다
+
+## 1.3.9.입력된 문자의 연산기호 기능 추가
+
+*ViewController.swift*
+```swift
+private var accumulator = 0.0
+private var bufferOperator: String?
+```
+*ViewController.swift - func calculate*
+```swift
+private func calculate(for newValue: String) -> Double {
+  let operand = Double(newValue)!
+  
+  switch bufferOperator {
+  case "+": return accumulator + operand
+  case "-": return accumulator - operand
+  case "×": return accumulator * operand
+  case "÷": return accumulator / operand
+  default: return operand
+  }
+}
+```
+*ViewController.swift - func performCommand*
+```swift
+private func performCommand(_ command: Command, with displayText: String) -> String {
+  var result: Double?
+  switch command {
+  case .addDigit(let input):
+    return addDigit(value: input, to: displayText)
+  case .operation(let op):
+    accumulator = calculate(for: displayText)
+    bufferOperator = op
+    result = accumulator
+  case .equal:
+    break
+  case .clear:
+    break
+  }
+  shouldResetText = true
+  return String(result ?? 0)
+}
+```
+
+입력받은 연산자를 `performCommand`함수에서 분기하여 화면상의 숫자를 전달인자로 받은 `calculate`함수 에서 연산하여 Double타입으로 리턴한다.

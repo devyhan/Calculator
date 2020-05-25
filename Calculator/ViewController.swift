@@ -18,6 +18,8 @@ final class ViewController: UIViewController {
     }
     
     private var shouldResetText = true
+    private var accumelator = 0.0
+    private var bufferOperator: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,18 +52,34 @@ final class ViewController: UIViewController {
         return displayStirng
     }
     
+    private func calculate(for newValue: String) -> Double {
+        let operand = Double(newValue)!
+        
+        switch bufferOperator {
+        case "+": return accumelator + operand
+        case "-": return accumelator - operand
+        case "×": return accumelator * operand
+        case "÷": return accumelator / operand
+        default: return operand
+        }
+    }
+    
     private func performCommand(_ command: Command, with displayText: String) -> String {
+        var result: Double?
+        
         switch command {
         case .addDigit(let input):
             return addDight(value: input, to: displayText)
-        case .operation(_):
-            break
+        case .operation(let op):
+            accumelator = calculate(for: displayText)
+            bufferOperator = op
+            result = accumelator
         case .equal:
             break
         case .clear:
             break
         }
         shouldResetText = true
-        return "0"
+        return String(result ?? 0)
     }
 }
