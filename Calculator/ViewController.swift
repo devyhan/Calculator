@@ -40,7 +40,8 @@ final class ViewController: UIViewController {
             commend = .addDigit(input)
         }
         
-        displayValue = performCommand(commend, with: displayValue)
+        let result = performCommand(commend, with: displayValue)
+        displayValue = limitFractionDigits(to: result)
         print("display : \(displayValue), command : \(commend)")
     }
     
@@ -81,5 +82,13 @@ final class ViewController: UIViewController {
         }
         shouldResetText = true
         return String(result ?? 0)
+    }
+    
+    private func limitFractionDigits(to numString: String) -> String {
+        guard let number = Double(numString) else { return "0" }
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 3
+        return formatter.string(from: number as NSNumber) ?? "0"
     }
 }

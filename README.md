@@ -32,10 +32,10 @@
 
 ### 1.3.1.Commit message convension
 ```
-Docs: 문서 수정
-Feat: 새로운 기능 추가
-Test: 테스트 코드, 리펙토링 테스트 코드 추가
-Fix: 버그 수정
+docs: 문서 수정
+feat: 새로운 기능 추가
+test: 테스트 코드, 리펙토링 테스트 코드 추가
+fix: 버그 수정
 ```
 *[관련 문서](http://localhost:4000/2020/05/14/git/git-CommitMessage)*
 
@@ -70,7 +70,6 @@ Fix: 버그 수정
 ![image](https://user-images.githubusercontent.com/45344633/82724614-4a50c180-9d12-11ea-8bf0-bbe000e61f07.png)
 
 ### 1.3.5.입력된 버튼 종류에 따른 명령 분기
-입력을 받는 버튼의 숫자, 연산자, =, AC 를 구분 
 *Command.swift*
 ```swift
 enum Command {
@@ -99,6 +98,7 @@ enum Command {
         print(commend)
     }
 ```
+입력을 받는 버튼의 숫자, 연산자, =, AC 를 Command enum의 연관랎으로 받아 구분 
 
 ### 1.3.6.입력된 버튼의 타이틀 출력
 
@@ -181,7 +181,7 @@ private func performCommand(_ command: Command, with displayText: String) -> Str
 
 문자열의 길이를 제한하기 위하여 `addDigit`의 기능을 확장하여 함수를 생성한 후 함수 내부에서 shouldResetText의 기본값을 ture 로 설정 후 13자리를 판별한후 `displayString`를 반환한다
 
-## 1.3.9.입력된 문자의 연산기호 기능 추가
+### 1.3.9.입력된 문자의 연산기호 기능 추가
 
 *ViewController.swift*
 ```swift
@@ -223,4 +223,86 @@ private func performCommand(_ command: Command, with displayText: String) -> Str
 }
 ```
 
+### 1.3.10.연산자 사칙연산 기능 추가
+
+*ViewController.swift*
+```swift
+private var shouldResetText = true
+private var accumelator = 0.0
+```
+
+*ViewController.swift - func calculator*
+```swift
+private func calculate(for newValue: String) -> Double {
+    let operand = Double(newValue)!
+    
+    switch bufferOperator {
+    case "+": return accumelator + operand
+    case "-": return accumelator - operand
+    case "×": return accumelator * operand
+    case "÷": return accumelator / operand
+    default: return operand
+    }
+}
+```
+
+*ViewController.swift - func performCommand*
+```swift
+private func performCommand(_ command: Command, with displayText: String) -> String {
+    var result: Double?
+    
+    switch command {
+    case .addDigit(let input):
+        return addDight(value: input, to: displayText)
+    case .operation(let op):
+        accumelator = calculate(for: displayText)
+        bufferOperator = op
+        result = accumelator
+    case .equal:
+        break
+    case .clear:
+        break
+    }
+    shouldResetText = true
+    return String(result ?? 0)
+}
+```
+
 입력받은 연산자를 `performCommand`함수에서 분기하여 화면상의 숫자를 전달인자로 받은 `calculate`함수 에서 연산하여 Double타입으로 리턴한다.
+
+### 1.3.11.사칙연산 기능 개선
+*ViewController.swif - didTapButtont*
+```swift
+@IBAction private func didTapButton(_ sender: UIButton) {
+    guard let input = sender.currentTitle  else { return }
+    
+    let commend: Command
+    switch input {
+    case "AC":
+        commend = .clear
+    case "=":
+        commend = .equal
+    case "+", "-", "×", "÷":
+        commend = .operation(input)
+    default:
+        commend = .addDigit(input)
+    }
+    
+    let result = performCommand(commend, with: displayValue)
+    displayValue = limitFractionDigits(to: result)
+    print("display : \(displayValue), command : \(commend)")
+}
+```
+
+*ViewController.swift - func limitFractionDigits*
+```swift
+private func limitFractionDigits(to numString: String) -> String {
+    guard let number = Double(numString) else { return "0" }
+    let formatter = NumberFormatter()
+    formatter.minimumFractionDigits = 0
+    formatter.maximumFractionDigits = 3
+    return formatter.string(from: number as NSNumber) ?? "0"
+}
+```
+
+연산시 소수점 이하 3자리 미만으로 떨어지지 않게 하기위한 함수 추가 `NumberFormmater()`활용
